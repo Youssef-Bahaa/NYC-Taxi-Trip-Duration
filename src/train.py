@@ -24,7 +24,8 @@ for name ,model in models.items():
     r2 = evaluate_model(model,X_train,X_val,X_test,y_train,y_val,y_test)
     print('Name: ',name)
     for k , v in r2.items():
-        print(k,v,'\n')
+        print(k,v)
+    print('\n')
 
     #joblib.dump(model, f"{name}.pkl")
 
