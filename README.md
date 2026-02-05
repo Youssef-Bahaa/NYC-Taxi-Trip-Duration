@@ -26,22 +26,6 @@ A step-by-step guide to reproduce experiments and get a submission.
   - Adds features: hour, dow, haversine_distance, bearing
   - Saves parquet files in `data/processed/`
 
-## 4. Train a baseline
-- Train a LightGBM baseline:
-  python src/train.py --train data/processed/train.parquet --model models/baseline_lgbm.pkl --seed 42
-
-- Expected output: cross-validated RMSLE printed and model saved.
-
-## 5. Evaluate & Predict
-- Evaluate:
-  python src/evaluate.py --model models/baseline_lgbm.pkl --data data/processed/valid.parquet
-- Predict:
-  python src/predict.py --model models/baseline_lgbm.pkl --input data/processed/test.parquet --output submission.csv
-
-## 6. Tips & next steps
-- Try log-transform target (RMSLE) and tune LightGBM params.
-- Add weather or holiday features to improve performance.
-- Track experiments with W&B or MLflow.
 
 ## Files to inspect
 - `notebooks/` — walkthroughs
